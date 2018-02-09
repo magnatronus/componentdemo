@@ -1,0 +1,9 @@
+{
+  "components":[
+    "androidheader",
+    "androidpdfviewer",
+    "buttonbar",
+    "loadingindicator",
+    "stacknavigator"
+  ]
+}
