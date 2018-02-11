@@ -2,7 +2,7 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
 	<id>uk.spiralarm.componentdemo</id>
 	<name>componentdemo</name>
-	<version>1.0</version>
+	<version>1.0.1</version>
 	<publisher>SpiralArm Consulting Ltd</publisher>
 	<url>http://www.spiralarm.uk</url>
 	<description/>
@@ -42,7 +42,7 @@
 		</plist>
 	</ios>
 	<android xmlns:android="http://schemas.android.com/apk/res/android">
-		<manifest android:versionCode="1" android:versionName="1.0.0">
+		<manifest android:versionCode="2" android:versionName="1.0.1">
 				<application android:theme="@style/Theme.AppCompat.NoTitleBar">
 				</application>
 		</manifest>

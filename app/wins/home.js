@@ -1,16 +1,14 @@
 /**
  * home.js
  * This is the root or home screen for our demo app
+ * This version has been updated to show the sue of a common base class for a standard window
  */
-import Magnium, { Component } from '/system/magnium';
+import Magnium from '/system/magnium';
+import BaseWindow from '/wins/base';
 import ButtonBar from '/components/buttonbar';
-import AndroidHeader from '/components/androidheader';
 import LoadingIndicator from '/components/loadingindicator';
 import ChildScreen from '/wins/child';
 import PDFScreen from '/wins/pdf';
-
-// import the styles we want
-import { standardWindowStyle } from '/theme';
 
   
 // define our buttons 
@@ -20,7 +18,7 @@ const barButtons = [
 ];
 
 
-class HomeScreen extends Component {
+class HomeScreen extends BaseWindow {
 
 
     checkButton(evt){
@@ -53,13 +51,7 @@ class HomeScreen extends Component {
     generateView() {
 
         // create main container window
-        const mainWindow = Ti.UI.createWindow({...standardWindowStyle, title: "Home"});
-
-        // as this is a cross platform window we are going to use a 'faux' android header
-        // purely optional but shows the use of detecting if Android
-        if(Magnium.isAndroid){
-            mainWindow.add(new AndroidHeader({title: "Home"}).view);
-        }
+        const mainWindow = super.generateView({title: "Home"});
 
         // assemble the main window
         mainWindow.add(new ButtonBar({buttons: barButtons}).view);

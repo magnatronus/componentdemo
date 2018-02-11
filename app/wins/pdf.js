@@ -2,14 +2,11 @@
  * pdf.js
  * This is an example child that will using the android pdf viewer component
  */
-import Magnium, { Component } from '/system/magnium';
-import AndroidHeader from '/components/androidheader';
+import Magnium from '/system/magnium';
+import BaseWindow from '/wins/base';
 import PDFViewer from '/components/androidpdfviewer';
 
-// import the styles we want
-import { standardWindowStyle } from '/theme';
-
-class PDFScreen extends Component {
+class PDFScreen extends BaseWindow {
 
 
     generateView() {
@@ -22,14 +19,7 @@ class PDFScreen extends Component {
         }
 
         // create main container window
-        const mainWindow = Ti.UI.createWindow({...standardWindowStyle, title: "Demo PDF"});
-
-        // as this is a cross platform window we are going to use a 'faux' android header
-        // purely optional but shows the use of detecting if Android
-        if(Magnium.isAndroid){
-            mainWindow.add(new AndroidHeader({title: "Demo PDF"}).view);
-        }
-
+        const mainWindow = super.generateView({title: "Demo PDF"});
 
         // now if PDF exists lets add a viewer
         if(newPDF.exists()){
